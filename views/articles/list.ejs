@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Статті</title>
+</head>
+<body>
+  <h1>Список статей</h1>
+
+  <ul>
+    <% articles.forEach(a => { %>
+      <li>
+        <a href="/articles/<%= a.id %>"><%= a.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

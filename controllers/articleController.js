@@ -1,8 +1,16 @@
 export function getArticles(req, res) {
-  res.send("Список статей (перевірка доступу працює).");
+  const articles = [
+    { id: 1, title: "Перша стаття" },
+    { id: 2, title: "Друга стаття" },
+  ];
+
+  res.render("articles/list.ejs", { articles });
 }
 
 export function getArticle(req, res) {
   const { articleId } = req.params;
-  res.send(`Стаття ID: ${articleId}`);
+
+  const article = { id: articleId, title: `Стаття №${articleId}`, body: "Контент статті..." };
+
+  res.render("articles/details.ejs", { article });
 }
